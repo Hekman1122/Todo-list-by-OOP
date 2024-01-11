@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ProjectManager</title>
+    <link rel="stylesheet" href="app.css" />
+    <script type="module" src="dist/bundle.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+   
+  </head>
+  <body>
+    <!-- 新增待辦事項表單 -->
+    <template id="project-input">
+      <form class="w-10/12 sm:w-2/3 md:w-1/2 xl:w-1/3 border border-2 border-neutral-500 mx-auto py-6 px-10 flex flex-col gap-5 items-start rounded-md my-4 shadow-md">
+        <div class="w-full flex flex-col  gap-2">
+          <label for="title" class="text-neutral-600 font-semibold text-lg">計畫標題</label>
+          <input type="text" id="title" class="w-full border border-2 border-stone-400 rounded-lg py-1 px-4"/>
+        </div>
+        <div class="w-full flex flex-col gap-2">
+          <label for="description" class="text-neutral-600 font-semibold text-lg">計畫內容</label>
+          <input type="text" id="description" class="w-full border border-2 border-stone-400 rounded-lg py-1 px-4"></input>
+        </div>
+        <div class="w-full flex flex-col gap-2">
+          <label for="people" class="text-neutral-600 font-semibold text-lg">參與人數</label>
+          <input type="number" id="people" step="1" min="0" max="10" class="w-full border border-2 border-stone-400 rounded-lg py-1 px-4"/>
+        </div>
+        <div class="w-full flex justify-end">  
+          <button type="submit" class="px-4 py-3 border border-2 text-stone-500 border-stone-500 rounded-lg my-2 w-1/2 text-sm font-semibold hover:border-stone-800 hover:text-stone-800 transition duration-300">新增計畫</button>
+        </div>
+      
+      </form>
+    </template>
+    <!-- 各別待辦事項 -->
+    <template id="single-project">
+      <li class="border border-2 rounded-md border-blue-300 my-2 p-2" draggable="true">
+        <h2 class="text-2xl text-neutral-700 font-semibold"></h2>
+        <h3 class="my-2 font-semibold text-lg text-neutral-600"></h3>
+        <p></p>
+      </li>
+    </template>
+    <!-- 待辦事項列 -->
+    <template id="project-list">
+      <section class="w-10/12 sm:w-2/3 md:w-1/2 xl:w-1/3 mx-auto px-10 py-3 border border-2 rounded-md my-6 shadow-sm">
+        <header>
+          <h2 class="font-semibold tracking-wide text-lg text-center"></h2>
+        </header>
+        <ul class="w-full p-3 rounded-md"></ul>
+      </section>
+    </template>
+    <div id="app" class="py-4">
+    </div>
+  </body>
+</html>
